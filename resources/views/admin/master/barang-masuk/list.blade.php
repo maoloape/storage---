@@ -39,9 +39,10 @@
                                         <td>{{ $row->no_produk }}</td>
                                         <td>{{ $row->no_kontrak }}</td>
                                         <td>
-                                            <a href="#modalEdit{{ $row->id }}" data-toggle="modal" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i>Edit</a>
-                                            <a href="#modalHapus{{ $row->id }}" data-toggle="modal" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i>Hapus</a>
-                                            <a href="#modalKeluar{{ $row->id }}" data-toggle="modal" class="btn btn-xs btn-info"><i class="fa fa-edit"></i>Keluar</a>
+                                            <a href="#modalEdit{{ $row->id }}" data-toggle="modal" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>
+                                            <a href="#modalHapus{{ $row->id }}" data-toggle="modal" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Hapus</a>
+                                            <a href="#modalKeluar{{ $row->id }}" data-toggle="modal" class="btn btn-xs btn-info"><i class="fa fa-edit"></i> Keluar</a>
+                                            <a href="#modalReturn{{ $row->id }}" data-toggle="modal" class="btn btn-xs btn-success"><i class="fa fa-edit"></i> Return</a>
                                         </td> 
                                     </tr>
                                     @endforeach
@@ -174,7 +175,7 @@
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                     </button>
                 </div>
-                <form method="POST" action="/bm/keluar/{{ $d->id }}">
+                <form method="POST" action="/bm/keluar/{{ $e->id }}">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
@@ -182,7 +183,34 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Yes</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Yes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i> No </button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    @endforeach
+
+    @foreach ($data_bm as $f)
+    <div class="modal fade" id="modalReturn{{ $f->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Barang Return</h5>
+                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="/bm/return/{{ $f->id }}">
+                @csrf
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="">Keterangan</label>
+                        <input type="text" class="form-control" name="text" placeholde="Keterangan ..." required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Yes</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i> No </button>
                 </div>
                 </form>

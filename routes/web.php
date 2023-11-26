@@ -53,6 +53,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/bm/update/{id}',[BamasController::class,'update']);
     Route::get('/bm/destroy/{id}',[BamasController::class,'destroy']);
     Route::post('/bm/keluar/{id}',[BamasController::class,'keluar']);
+    Route::post('/bm/return/{id}',[BamasController::class,'return']);
 
     // Crud Barang Keluar
     Route::get('/bk',[BakerController::class,'index']);
@@ -63,7 +64,7 @@ Route::middleware(['auth'])->group(function(){
     // Crud Barang Return
     Route::get('/br',[ReturnController::class,'index']);
     Route::post('/br/store',[ReturnController::class,'store']);
-    // Route::post('/bk/update/{id}',[ReturnController::class,'update']);
+    Route::post('/bk/update/{id}',[ReturnController::class,'update']);
     Route::get('/br/destroy/{id}',[ReturnController::class,'destroy']);
 });
 

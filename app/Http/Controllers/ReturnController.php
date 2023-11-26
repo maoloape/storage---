@@ -11,6 +11,8 @@ class ReturnController extends Controller
     {
         $data = array(
             'title' => 'Data Barang Keluar',
+            'data_br' => Bamas::where('return_in', 'in')
+                            ->get(),
             'data_bm' => Bamas::where('return_in', 'out')
                             ->get(),
         );

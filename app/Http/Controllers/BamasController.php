@@ -62,4 +62,12 @@ class BamasController extends Controller
         ]);
         return redirect('/bm')->with('Success', 'Data Berhasil Dikeluarkan');
     }
+
+    public function return($id)
+    {
+        Bamas::where('id', $id)->update([
+            'return_in' => 'out'
+        ]);
+        return redirect('/bm')->with('Success', 'Data Berhasil Dikeluarkan');
+    }
 }
