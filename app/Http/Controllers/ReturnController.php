@@ -52,7 +52,9 @@ class ReturnController extends Controller
 
     public function destroy($id)
     {
-        Bamas::where('id', $id)->delete();
-        return redirect('/br')->with('Success', 'Data Berhasil Dihapus');
+        Bamas::where('id', $id)->update([
+            'return_in' => 'in'
+        ]);
+        return redirect('/br')->with('Success', 'Data Berhasil Dimasukan');
     }
 }

@@ -8,10 +8,10 @@
                     <div class="card-body">
                         <div class="card-header">
                             <h4 class="card-title">Barang Return</h4>
-                            <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalCreate">
+                            {{-- <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalCreate">
                                 <i class="fa fa-plus"></i>
                                 Tambah Data
-                            </button>
+                            </button> --}}
                         </div>        
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
@@ -38,7 +38,7 @@
                                         <td>{{ $row->serial_no }}</td>
                                         <td>{{ $row->text }}</td>
                                         <td>
-                                            {{-- <a href="#modalEdit{{ $row->id }}" data-toggle="modal" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i>Edit</a> --}}
+                                            <a href="#modalEdit{{ $row->id }}" data-toggle="modal" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i>Edit</a>
                                             <a href="#modalHapus{{ $row->id }}" data-toggle="modal" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i>Hapus</a>
                                         </td> 
                                     </tr>
@@ -53,7 +53,7 @@
     </div>
 
     
-    <div class="modal fade" id="modalCreate" tabindex="-1" role="dialog" aria-hidden="true">
+    {{-- <div class="modal fade" id="modalCreate" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -104,7 +104,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> --}}
    
     @foreach ($data_bm as $d)
     <div class="modal fade" id="modalEdit{{ $d->id }}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -118,22 +118,18 @@
                 <form method="POST" action="/br/update/{{ $d->id }}">
                 @csrf
                 <div class="modal-body">
-                    {{-- <div class="form-group">
+                    <div class="form-group">
                         <label for="">Nama barang</label>
-                        <input type="text" value="{{ $d->nama_barang }}" class="form-control" name="nama_barang" placeholde="Nama Barang ..." required>
+                        <input type="text" readonly value="{{ $d->nama_barang }}" class="form-control" name="nama_barang" placeholde="Nama Barang ..." required>
                     </div>
                     <div class="form-group">
                         <label for="">Type</label>
-                        <input type="text" value="{{ $d->type }}" class="form-control" name="type" placeholde="Type ..." required>
+                        <input type="text" readonly value="{{ $d->type }}" class="form-control" name="type" placeholde="Type ..." required>
                     </div>
                     <div class="form-group">
                         <label for="">No. Seri</label>
-                        <input type="text" value="{{ $d->serial_no }}" class="form-control" name="serial_no" placeholde="No. Seri ..." required>
+                        <input type="text" readonly value="{{ $d->serial_no }}" class="form-control" name="serial_no" placeholde="No. Seri ..." required>
                     </div>
-                    <div class="form-group">
-                        <label for="">No. Produk</label>
-                        <input type="text" value="{{ $d->no_produk }}" class="form-control" name="no_produk" placeholde="No. Produk ..." required>
-                    </div> --}}
                     <div class="form-group">
                         <label for="">Keterangan</label>
                         <input type="text" value="{{ $d->text }}" class="form-control" name="text" placeholde="Keterangan ..." required>

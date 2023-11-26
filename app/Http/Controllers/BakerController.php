@@ -16,6 +16,8 @@ class BakerController extends Controller
             'title' => 'Data Barang Keluar',
             'data_bm' => Bamas::where('good_in', 'out')
                             ->get(),
+            'data_bk' => Bamas::where('good_in', 'in')
+                            ->get(),
         );
 
         return view('admin.master.barang-keluar.list',$data);
@@ -56,7 +58,9 @@ class BakerController extends Controller
 
     public function destroy($id)
     {
-        Bamas::where('id', $id)->delete();
-        return redirect('/bk')->with('Success', 'Data Berhasil Dihapus');
+        Bamas::where('id', $id)->update([
+            'good_in' => 'in'
+        ]);
+        return redirect('/bk')->with('Success', 'Data Berhasil Dimasukan');
     }
 }

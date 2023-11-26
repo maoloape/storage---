@@ -52,6 +52,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/bm/store',[BamasController::class,'store']);
     Route::post('/bm/update/{id}',[BamasController::class,'update']);
     Route::get('/bm/destroy/{id}',[BamasController::class,'destroy']);
+    Route::post('/bm/keluar/{id}',[BamasController::class,'keluar']);
 
     // Crud Barang Keluar
     Route::get('/bk',[BakerController::class,'index']);

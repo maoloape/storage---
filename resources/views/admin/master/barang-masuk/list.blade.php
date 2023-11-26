@@ -174,7 +174,7 @@
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                     </button>
                 </div>
-                <form method="GET" action="/bm/keluar/{{ $d->id }}">
+                <form method="POST" action="/bm/keluar/{{ $d->id }}">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">

@@ -13,8 +13,6 @@ class BamasController extends Controller
             'title' => 'Data Barang Masuk',
             'data_bm' => Bamas::where('good_in', 'in')
                             ->get(),
-            'data_bm' => Bamas::where('return_in', 'in')
-                            ->get(),
         );
 
         return view('admin.master.barang-masuk.list',$data);
@@ -55,5 +53,13 @@ class BamasController extends Controller
     {
         Bamas::where('id', $id)->delete();
         return redirect('/bm')->with('Success', 'Data Berhasil Dihapus');
+    }
+
+    public function keluar($id)
+    {
+        Bamas::where('id', $id)->update([
+            'good_in' => 'out'
+        ]);
+        return redirect('/bm')->with('Success', 'Data Berhasil Dikeluarkan');
     }
 }

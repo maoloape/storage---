@@ -8,10 +8,10 @@
                     <div class="card-body">
                         <div class="card-header">
                             <h4 class="card-title">Barang Keluar</h4>
-                            <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalCreate">
+                            {{-- <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalCreate">
                                 <i class="fa fa-plus"></i>
                                 Tambah Data
-                            </button>
+                            </button> --}}
                         </div>        
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">
@@ -50,7 +50,7 @@
     </div>
 
     
-    <div class="modal fade" id="modalCreate" tabindex="-1" role="dialog" aria-hidden="true">
+    {{-- <div class="modal fade" id="modalCreate" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -65,7 +65,7 @@
                         <label for="">Nama Barang</label>
                         <select class="form-control" name="nama_barang" id="" required>
                             <option value="" hidden>-- Pilih Barang --</option>
-                            @foreach ($data_bm as $a)
+                            @foreach ($data_bk as $a)
                             <option value="{{ $a->id }}">{{ $a->nama_barang }}</option>
                             @endforeach
                         </select>
@@ -74,7 +74,7 @@
                         <label for="">Type</label>
                         <select class="form-control" name="type" id="" required>
                             <option value="" hidden>-- Pilih Type Barang --</option>
-                            @foreach ($data_bm as $a)
+                            @foreach ($data_bk as $a)
                             <option value="{{ $a->id }}">{{ $a->type }}</option>
                             @endforeach
                         </select>
@@ -84,7 +84,7 @@
                         <label for="">Type</label>
                         <select class="form-control" name="serial_no" id="" required>
                             <option value="" hidden>-- Pilih No Seri Barang --</option>
-                            @foreach ($data_bm as $a)
+                            @foreach ($data_bk as $a)
                             <option value="{{ $a->id }}">{{ $a->serial_no }}</option>
                             @endforeach
                         </select>
@@ -97,7 +97,7 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> --}}
    
     {{-- @foreach ($data_bk as $d)
     <div class="modal fade" id="modalEdit{{ $d->id }}" tabindex="-1" role="dialog" aria-hidden="true">
