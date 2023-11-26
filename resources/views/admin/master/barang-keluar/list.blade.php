@@ -36,7 +36,7 @@
                                         <td>{{ $row->serial_no }}</td>
                                         <td>
                                             {{-- <a href="#modalEdit{{ $row->id }}" data-toggle="modal" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i>Edit</a> --}}
-                                            <a href="#modalHapus{{ $row->id }}" data-toggle="modal" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i>Hapus</a>
+                                            <a href="#modalHapus{{ $row->id }}" data-toggle="modal" class="btn btn-xs btn-success"><i class="fa fa-trash"></i> Masuk</a>
                                         </td> 
                                     </tr>
                                     @endforeach
@@ -147,7 +147,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Hapus Data Barang</h5>
+                    <h5 class="modal-title">Masukan Data Barang</h5>
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                     </button>
                 </div>
@@ -155,11 +155,11 @@
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
-                        <h5>Apakah Anda Ingin Menghapus Data Ini</h5>
+                        <h5>Apakah Anda Ingin Memasukan Data Ini</h5>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Hapus</button>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-trash"></i> Masuk</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i> Close</button>
                 </div>
                 </form>

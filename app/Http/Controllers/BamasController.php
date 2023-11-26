@@ -12,7 +12,9 @@ class BamasController extends Controller
         $data = array(
             'title' => 'Data Barang Masuk',
             'data_bm' => Bamas::where('good_in', 'in')
+                            ->where('return_in', 'in')
                             ->get(),
+                            
         );
 
         return view('admin.master.barang-masuk.list',$data);
@@ -63,10 +65,11 @@ class BamasController extends Controller
         return redirect('/bm')->with('Success', 'Data Berhasil Dikeluarkan');
     }
 
-    public function return($id)
+    public function return(Request $request, $id)
     {
         Bamas::where('id', $id)->update([
-            'return_in' => 'out'
+            'return_in' => 'out',
+            'text'      => $request->text,
         ]);
         return redirect('/bm')->with('Success', 'Data Berhasil Dikeluarkan');
     }
