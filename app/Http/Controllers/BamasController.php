@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Bamas;
 
 class BamasController extends Controller
-{
+{   
     public function index()
     {
         $data = array(
@@ -51,6 +51,29 @@ class BamasController extends Controller
         
     }
 
+    public function filter(Request $request){
+        $start_date = $request->start_date;
+        $end_date   = $request->end_date;
+
+        $request->validate([
+            'start_date' => 'required',
+            'end_date' => 'required',
+        ],
+        [
+            'start_date' => 'Start Date Wajib Di Isi',
+            'end_date' => 'End Date Wajib Di Isi',
+        ]);
+
+        $data_bm = Bamas::where('good_in', 'in')
+                        ->where('return_in', 'in')
+                        ->whereDate('created_at', '>=', $start_date)
+                        ->whereDate('created_at', '<=', $end_date)
+                        ->get();
+
+        return view('admin.master.barang-masuk.list', compact('data_bm'));
+    }
+
+
     public function destroy($id)
     {
         Bamas::where('id', $id)->delete();
@@ -73,4 +96,6 @@ class BamasController extends Controller
         ]);
         return redirect('/bm')->with('Success', 'Data Berhasil Dikeluarkan');
     }
+
+    
 }

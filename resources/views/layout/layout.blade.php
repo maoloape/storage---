@@ -10,6 +10,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Custom Stylesheet -->
     <link href="/assets/plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/plugins/chartist/css/chartist.min.css">
+    <link rel="stylesheet" href="/assets/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
     <link href="/assets/plugins/sweetalert/css/sweetalert.css" rel="stylesheet">
     <link href="/assets/css/style.css" rel="stylesheet">
 
@@ -78,7 +80,7 @@
                                 <div class="dropdown-content-body">
                                     <ul>
                                         <li>
-                                            <a href="#"><i class="icon-user"></i> <span>Profile</span></a>
+                                            <a href="/profile"><i class="icon-user"></i> <span>Profile</span></a>
                                         </li>
                                         <li><a href="/logout"><i class="icon-key"></i> <span>Logout</span></a></li>
                                     </ul>
@@ -129,9 +131,9 @@
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Report</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="#">Report Barang Masuk</a></li>
-                            <li><a href="#">Report Barang Keluar</a></li>
-                            <li><a href="#">Report Barang Return</a></li>
+                            <li><a href="/rbm">Report Barang Masuk</a></li>
+                            <li><a href="/rbk">Report Barang Keluar</a></li>
+                            <li><a href="/rbr">Report Barang Return</a></li>
                         </ul>
                     </li>
                     @endif
@@ -157,9 +159,9 @@
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Report</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="#">Report Barang Masuk</a></li>
-                            <li><a href="#">Report Barang Keluar</a></li>
-                            <li><a href="#">Report Barang Return</a></li>
+                            <li><a href="/rbm">Report Barang Masuk</a></li>
+                            <li><a href="/rbk">Report Barang Keluar</a></li>
+                            <li><a href="/rbr">Report Barang Return</a></li>
                         </ul>
                     </li>
                     @endif

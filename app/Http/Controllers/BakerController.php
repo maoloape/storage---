@@ -33,28 +33,9 @@ class BakerController extends Controller
             'id_serial'   => $request->id_serial,
         ]);
 
-        // Bamas::update([
-        //     'id_barang'   => $request->id_barang,
-        //     'type_barang' => $request->type_barang,
-        //     'id_serial'   => $request->id_serial,
-        // ]);
-
         return redirect('/bk')->with('Success', 'Data Berhasil Disimpan');
     }
 
-    // public function update(Request $request, $id)
-    // {
-    //     Baker::where('id', $id)
-    //     ->where('id', $id)
-    //     ->update([
-    //         'id_barang'   => $request->id_barang,
-    //         'type_barang' => $request->type_barang,
-    //         'id_serial'   => $request->id_serial,
-    //     ]);
-
-    //     return redirect('/bk')->with('Success', 'Data Berhasil Disimpan');
-        
-    // }
 
     public function destroy($id)
     {
@@ -62,5 +43,26 @@ class BakerController extends Controller
             'good_in' => 'in'
         ]);
         return redirect('/bk')->with('Success', 'Data Berhasil Dimasukan');
+    }
+
+    public function filter(Request $request){
+        $start_date = $request->start_date;
+        $end_date   = $request->end_date;
+
+        $request->validate([
+            'start_date' => 'required',
+            'end_date' => 'required',
+        ],
+        [
+            'start_date' => 'Start Date Wajib Di Isi',
+            'end_date' => 'End Date Wajib Di Isi',
+        ]);
+
+        $data_bm = Bamas::where('good_in', 'out')
+                        ->whereDate('created_at', '>=', $start_date)
+                        ->whereDate('created_at', '<=', $end_date)
+                        ->get();
+
+        return view('admin.master.barang-keluar.list', compact('data_bm'));
     }
 }

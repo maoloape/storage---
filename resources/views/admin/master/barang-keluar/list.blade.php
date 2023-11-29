@@ -8,10 +8,23 @@
                     <div class="card-body">
                         <div class="card-header">
                             <h4 class="card-title">Barang Keluar</h4>
-                            {{-- <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalCreate">
-                                <i class="fa fa-plus"></i>
-                                Tambah Data
-                            </button> --}}
+                            <hr>
+                            <form method="GET" action="/bk/filter">
+                                @csrf
+                                <div class="row pb-3">
+                                    <div class="col-md-3">
+                                        <label for="">Start Date</label>
+                                        <input type="date" name="start_date" class="form-control">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="">End Date :</label>
+                                        <input type="date" name="end_date" class="form-control">
+                                    </div>
+                                    <div class="col-md-1 pt-4">
+                                        <button type="submit" class="btn btn-primary"> Filter </button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>        
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered zero-configuration">

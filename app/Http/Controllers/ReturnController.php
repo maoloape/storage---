@@ -31,12 +31,6 @@ class ReturnController extends Controller
             'text'        => $request->text,
         ]);
 
-        // Bamas::update([
-        //     'id_barang'   => $request->id_barang,
-        //     'type_barang' => $request->type_barang,
-        //     'id_serial'   => $request->id_serial,
-        // ]);
-
         return redirect('/br')->with('Success', 'Data Berhasil Disimpan');
     }
 
@@ -58,5 +52,26 @@ class ReturnController extends Controller
             'return_in' => 'in'
         ]);
         return redirect('/br')->with('Success', 'Data Berhasil Dimasukan');
+    }
+
+    public function filter(Request $request){
+        $start_date = $request->start_date;
+        $end_date   = $request->end_date;
+
+        $request->validate([
+            'start_date' => 'required',
+            'end_date' => 'required',
+        ],
+        [
+            'start_date' => 'Start Date Wajib Di Isi',
+            'end_date' => 'End Date Wajib Di Isi',
+        ]);
+
+        $data_bm = Bamas::where('return_in', 'out')
+                        ->whereDate('created_at', '>=', $start_date)
+                        ->whereDate('created_at', '<=', $end_date)
+                        ->get();
+
+        return view('admin.master.barang-return.list', compact('data_bm'));
     }
 }

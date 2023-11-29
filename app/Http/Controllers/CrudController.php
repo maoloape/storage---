@@ -4,26 +4,46 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\bcrypt;
+use Illuminate\Support\Facades\Hash;
 
 class CrudController extends Controller
 {
-     public function index()
+    public function index()
     {
         $data = array(
             'title' => 'Data User',
-            'data_user' => user::all(),
+            'data_user' => User::all(),
         );
 
         return view('admin.master.user.list',$data);
     }
 
-    public function store(Request $request)
+    // setting profile
+    public function profile()
     {
-        user::create([
+        $user = Auth::user()->id;
+
+        $data = array(
+            'title' => 'Setting Profile',
+            'data_profile' => User::where('id', $user)->get(),
+        );
+
+        return view('profile',$data);
+    }
+
+    public function store(Request $request)
+    {   
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required|max:6',
+        ]);
+        
+        User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => Hash::make($request->password),
             'role' => $request->role,
         ]);
 
@@ -31,18 +51,43 @@ class CrudController extends Controller
     }
 
     public function update(Request $request, $id)
-    {
-        user::where('id', $id)
+    {   
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required|max:6',
+        ]);
+
+        User::where('id', $id)
         ->where('id', $id)
         ->update([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => Hash::make($request->password),
             'role' => $request->role,
         ]);
 
         return redirect('/crud')->with('Success', 'Data Berhasil Disimpan');
         
+    }
+
+    // setting profile
+    public function updateprofile(Request $request, $id)
+    {      
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required|max:6',
+        ]);
+        
+        User::where('id', $id)
+        ->where('id', $id)
+        ->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role' => $request->role,
+        ]);
+
+        return redirect('/profile')->with('Success', 'Data Berhasil Disimpan');
     }
 
     public function destroy($id)

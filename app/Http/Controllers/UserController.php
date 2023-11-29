@@ -14,7 +14,7 @@ class UserController extends Controller
     function login(Request $request){
         $request->validate([
             'email' => 'required',
-            'password' => 'required',
+            'password' => 'required|max:6',
         ],[
             'email.required' => 'Email Wajib Di Isi',
             'password.required' => 'Password Wajib Di Isi',

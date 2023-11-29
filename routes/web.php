@@ -4,6 +4,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BakerController;
 use App\Http\Controllers\BamasController;
 use App\Http\Controllers\CrudController;
+use App\Http\Controllers\ReportBMController;
+use App\Http\Controllers\ReportBRController;
+use App\Http\Controllers\ReportBKController;
 use App\Http\Controllers\ReturnController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -50,6 +53,7 @@ Route::middleware(['auth'])->group(function(){
     // Crud Barang Masuk
     Route::get('/bm',[BamasController::class,'index']);
     Route::post('/bm/store',[BamasController::class,'store']);
+    Route::get('/bm/filter',[BamasController::class,'filter']);
     Route::post('/bm/update/{id}',[BamasController::class,'update']);
     Route::get('/bm/destroy/{id}',[BamasController::class,'destroy']);
     Route::post('/bm/keluar/{id}',[BamasController::class,'keluar']);
@@ -58,16 +62,29 @@ Route::middleware(['auth'])->group(function(){
     // Crud Barang Keluar
     Route::get('/bk',[BakerController::class,'index']);
     Route::post('/bk/store',[BakerController::class,'store']);
-    // Route::post('/bk/update/{id}',[BamasController::class,'update']);
+    Route::get('/bk/filter',[BakerController::class,'filter']);
     Route::get('/bk/destroy/{id}',[BakerController::class,'destroy']);
 
     // Crud Barang Return
     Route::get('/br',[ReturnController::class,'index']);
     Route::post('/br/store',[ReturnController::class,'store']);
+    Route::get('/br/filter',[ReturnController::class,'filter']);
     Route::post('/bk/update/{id}',[ReturnController::class,'update']);
     Route::get('/br/destroy/{id}',[ReturnController::class,'destroy']);
+
+    // Setting Profile
+    Route::get('/profile',[CrudController::class,'profile']);
+    Route::post('/profile/updateprofile/{id}',[CrudController::class,'updateprofile']);
+
+    // Crud Report Barang Masuk
+    Route::get('/rbm',[ReportBMController::class,'index']);
+    Route::get('/rbm/bmexport',[ReportBMController::class,'bmexport']);
+
+    // Crud Report Barang Keluar
+    Route::get('/rbk',[ReportBKController::class,'index']);
+    Route::get('/rbk/bkexport',[ReportBKController::class,'bkexport']);
+
+    // Crud Report Barang Return
+    Route::get('/rbr',[ReportBRController::class,'index']);
+    Route::get('/rbr/bkexport',[ReportBRController::class,'brexport']);
 });
-
-
-
-
