@@ -37,5 +37,8 @@
         <td>{{ $row->text }}</td>
     </tr>
     @endforeach
+    <tr>
+        <td>Note :</td>
+    </tr>
     </tbody>
 </table>

@@ -35,5 +35,8 @@
         <td>{{ $row->serial_no }}</td>
     </tr>
     @endforeach
+    <tr>
+        <td>Note :</td>
+    </tr>
     </tbody>
 </table>
