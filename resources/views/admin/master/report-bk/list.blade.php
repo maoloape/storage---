@@ -23,14 +23,17 @@
                                 <div class="row pb-3">
                                     <div class="col-md-3">
                                         <label for="">Start Date</label>
-                                        <input type="date" name="start_date" class="form-control">
+                                        <input type="date" name="start_date" class="form-control" required>
                                     </div>
                                     <div class="col-md-3">
                                         <label for="">End Date :</label>
-                                        <input type="date" name="end_date" class="form-control">
+                                        <input type="date" name="end_date" class="form-control" required>
                                     </div>
                                     <div class="col-md-1 pt-4">
-                                        <button type="submit" class="btn btn-primary"> Export </button>
+                                        <button type="submit" class="btn btn-success" name="export_type" value="EXCEL"> Export Excel </button>
+                                    </div>
+                                    <div class="col-md-1 pt-4">
+                                        <button type="submit" class="btn btn-danger" name="export_type" value="PDF"> Export PDF</button>
                                     </div>
                                 </div>
                             </form>

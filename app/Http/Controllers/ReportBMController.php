@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use App\Exports\BmExport;
 use App\Models\Bamas;
 use Illuminate\Http\Request;
@@ -38,7 +39,17 @@ class ReportBMController extends Controller
                             ->whereDate('created_at', '<=', $end_date)
                             ->get();
 
-        return Excel::download(new BmExport($data_bm), 'Barang_Masuk.xlsx');
+        if ($request->export_type == 'PDF') 
+        {
+                                
+        $pdf = PDF::loadView('admin.master.report-bm.list', compact('data_bm'));
+        return $pdf->download('admin.master.report-bm.table-pdf');
+
+        }
+        
+        else if ($request->export_type == 'EXCEL') {
+            return Excel::download(new BmExport($data_bm), 'Barang_Masuk.xlsx');
+        }
     }
         
 }

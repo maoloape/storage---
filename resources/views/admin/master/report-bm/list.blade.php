@@ -30,7 +30,10 @@
                                         <input type="date" name="end_date" class="form-control" required>
                                     </div>
                                     <div class="col-md-1 pt-4">
-                                        <button type="submit" class="btn btn-primary"> Export </button>
+                                        <button type="submit" class="btn btn-success" name="export_type" value="EXCEL"> Export Excel </button>
+                                    </div>
+                                    <div class="col-md-1 pt-4">
+                                        <button type="submit" class="btn btn-danger" name="export_type" value="PDF"> Export PDF</button>
                                     </div>
                                 </div>
                             </form>
