@@ -2,25 +2,25 @@
 <table>
     <thead>
         <tr>
-            <th>
-                <img src="././assets/images/user/pertamina.png" height="120" width="120" alt="">
+            <th style="border: 1px solid black; padding: 8px text-align: center;" colspan="2">
+                <img src="././assets/images/user/pertamina.png" height="80" width="80" alt="">
             </th>
-            <th><h1>Surat Barang Keluar</h1></th>
-            <th>
-                <img src="././assets/images/user/pertamina.png" height="120" width="120" alt="">
+            <th style="border: 1px solid black; padding: 8px; text-align: center; font-weight: bold;" ><h1>Surat Barang Masuk</h1></th>
+            <th style="border: 1px solid black; padding: 8px text-align: center;">
+                <img src="././assets/images/user/pertamina.png" height="80" width="80" alt="">
             </th>
         </tr>
     </thead>
-    <br>
 </table>
+
 <br>
 <table>
     <thead>
         <tr>
-            <th>No</th>
-            <th>Nama Barang</th>
-            <th>Type</th>
-            <th>No. Seri</th>
+            <th style="border: 1px solid black; padding: 8px; text-align: center; font-weight: bold;">No</th>
+            <th style="border: 1px solid black; padding: 8px; font-weight: bold;">Nama Barang</th>
+            <th style="border: 1px solid black; padding: 8px; font-weight: bold;">Type</th>
+            <th style="border: 1px solid black; padding: 8px; font-weight: bold;">No. Seri</th>
         </tr>
     </thead>
     <tbody>
@@ -29,14 +29,42 @@
     @endphp
     @foreach ($data_bm as $row)
     <tr>
-        <td>{{ $no++ }} </td>
-        <td>{{ $row->nama_barang }}</td>
-        <td>{{ $row->type }}</td>
-        <td>{{ $row->serial_no }}</td>
+        <td style="border: 1px solid black; padding: 8px; text-align: center;">{{ $no++ }} </td>
+        <td style="border: 1px solid black; padding: 8px;">{{ $row->nama_barang }}</td>
+        <td style="border: 1px solid black; padding: 8px;">{{ $row->type }}</td>
+        <td style="border: 1px solid black; padding: 8px;">{{ $row->serial_no }}</td>
     </tr>
     @endforeach
     <tr>
-        <td>Note :</td>
+        <td style="border: 1px solid black; padding: 8px;" colspan="4">Note :</td>
     </tr>
     </tbody>
+</table>
+
+<br>
+<table>
+<thead>
+    <tr>
+        <th style="border: 1px solid black; padding: 8px; font-weight: bold;" colspan="2">Pengirim</th>
+        <th style="border: 1px solid black; padding: 8px; font-weight: bold;" >Disetujui</th>
+        <th style="border: 1px solid black; padding: 8px; font-weight: bold;" >Yang Menerima</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td style="border: 1px solid black; padding: 8px;" colspan="2">Nama :</td>
+        <td style="border: 1px solid black; padding: 8px;" >Nama :</td>
+        <td style="border: 1px solid black; padding: 8px;" >Nama :</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid black; padding: 8px;" colspan="2">Tanggal :</td>
+        <td style="border: 1px solid black; padding: 8px;" >Tanggal :</td>
+        <td style="border: 1px solid black; padding: 8px;" >Tanggal :</td>
+    </tr>
+    <tr>
+        <td style="border: 1px solid black; padding: 8px;" colspan="2">Tanda Tangan :</td>
+        <td style="border: 1px solid black; padding: 8px;" >Tanda Tangan :</td>
+        <td style="border: 1px solid black; padding: 8px;" >Tanda Tangan :</td>
+    </tr>
+</tbody>
 </table>
