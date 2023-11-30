@@ -17,6 +17,16 @@
 <table>
     <thead>
         <tr>
+            <th style="border: 1px solid black; padding: 8px; text-align: center; font-weight: bold;" colspan="6">PT. PERTAMINA HULU ENERGI <br> Lokasi : Lima F/S dan Echo E/S <br> RADIO PROJECT 2023 </th>
+        </tr>
+    </thead>
+</table>
+
+
+<br>
+<table>
+    <thead>
+        <tr>
             <th style="border: 1px solid black; padding: 8px; text-align: center; font-weight: bold;">No</th>
             <th style="border: 1px solid black; padding: 8px; font-weight: bold;">Nama Barang</th>
             <th style="border: 1px solid black; padding: 8px; font-weight: bold;">Type</th>
