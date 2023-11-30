@@ -5,8 +5,6 @@ namespace App\Exports;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
 
-// class BmExport implements FromQuery, WithMapping, WithHeadings
-
 class BmExport implements FromView
 {
 
@@ -19,6 +17,7 @@ class BmExport implements FromView
 
     public function view(): View
     {
-        return view('admin.master.report-bm.list',['data_bm' =>$this->data_bm]);
+        return view('admin.master.report-bm.table',['data_bm' =>$this->data_bm]);
     }
+    
 }

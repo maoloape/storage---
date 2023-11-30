@@ -18,7 +18,7 @@
                                     </div>
                                 @endif
                             <hr>
-                            <form method="GET" action="/rbm/bmexport">
+                            <form method="post" action="/rbr/brexport">
                                 @csrf
                                 <div class="row pb-3">
                                     <div class="col-md-3">

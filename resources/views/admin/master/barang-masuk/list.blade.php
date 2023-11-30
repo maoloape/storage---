@@ -7,17 +7,17 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="card-header">
-                            <h4 class="card-title">Barang Masuk</h4>
+                            <div class="row md-3">
+                                <h4 class="card-title">Barang Masuk</h4>
+                                <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalCreate">
+                                    <i class="fa fa-plus"></i>
+                                    Tambah Data
+                                </button>
+                            </div>
                             <hr>
                             <form method="GET" action="/bm/filter">
                                 @csrf
                                 <div class="row pb-3">
-                                    <div class="col-md-5 pt-4">
-                                        <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#modalCreate">
-                                            <i class="fa fa-plus"></i>
-                                            Tambah Data
-                                        </button>
-                                    </div>
                                     <div class="col-md-3">
                                         <label for="">Start Date</label>
                                         <input type="date" name="start_date" class="form-control">

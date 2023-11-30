@@ -18,16 +18,16 @@
                                     </div>
                                 @endif
                             <hr>
-                            <form method="GET" action="/rbm/bmexport">
+                            <form action="/rbm/bmexport" method="post" >
                                 @csrf
                                 <div class="row pb-3">
                                     <div class="col-md-3">
-                                        <label for="">Start Date</label>
-                                        <input type="date" name="start_date" class="form-control">
+                                        <label for="start_date">Start Date</label>
+                                        <input type="date" name="start_date" class="form-control" required>
                                     </div>
                                     <div class="col-md-3">
-                                        <label for="">End Date :</label>
-                                        <input type="date" name="end_date" class="form-control">
+                                        <label for="end_date">End Date :</label>
+                                        <input type="date" name="end_date" class="form-control" required>
                                     </div>
                                     <div class="col-md-1 pt-4">
                                         <button type="submit" class="btn btn-primary"> Export </button>

@@ -16,6 +16,6 @@ class BrExport implements FromView
 
     public function view(): View
     {
-        return view('admin.master.report-bm.list',['data_bm' =>$this->data_bm]);
+        return view('admin.master.report-br.table',['data_bm' =>$this->data_bm]);
     }
 }

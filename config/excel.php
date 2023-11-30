@@ -211,7 +211,10 @@ return [
         'default' => Maatwebsite\Excel\DefaultValueBinder::class,
     ],
 
-    'cache' => [
+    'cache' =>  [
+        'driver' => 'disk',
+    'disk' => 'local',
+    'expire' => 60 * 24, // Cache for 1 day
         /*
         |--------------------------------------------------------------------------
         | Default cell caching driver
@@ -257,7 +260,7 @@ return [
         |
         */
         'illuminate' => [
-            'store' => null,
+            'store' => 'file',
         ],
 
         /*

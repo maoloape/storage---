@@ -16,6 +16,6 @@ class BkExport implements FromView
 
     public function view(): View
     {
-        return view('admin.master.report-bk.list',['data_bm' =>$this->data_bm]);
+        return view('admin.master.report-bk.table',['data_bm' =>$this->data_bm]);
     }
 }
