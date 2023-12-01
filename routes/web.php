@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BakerController;
 use App\Http\Controllers\BamasController;
+use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\CrudController;
 use App\Http\Controllers\ReportBMController;
 use App\Http\Controllers\ReportBRController;
@@ -43,6 +44,9 @@ Route::middleware(['auth'])->group(function(){
 });
 
 Route::middleware(['auth'])->group(function(){
+
+    //Beranda
+    Route::get('/beranda',[BerandaController::class,'index']);
     
     // Crud User
     Route::get('/crud',[CrudController::class,'index']);

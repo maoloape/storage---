@@ -103,7 +103,7 @@
                 <ul class="metismenu" id="menu">
                     @if (Auth::user()->role == 'admin')
                     <li class="nav-label">Dashboard</li><li>
-                        <a href="{{ route('beranda')}}" aria-expanded="false">
+                        <a href="/beranda" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
                     </li>
@@ -180,12 +180,11 @@
             <div class="row page-titles mx-0">
                 <div class="col p-md-0">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+                        <li class="breadcrumb-item">Home</li>
+                        <li class="breadcrumb-item active"><a href="/beranda">Dashboard</a></li>
                     </ol>
                 </div>
             </div>
-            <!-- row -->
 
             <div class="container-fluid">
                 @yield('content')
