@@ -39,8 +39,8 @@ class ReportBRController extends Controller
         if ($request->export_type == 'PDF') 
         {
                                                 
-            $pdf = PDF::loadView('admin.master.report-br.list', compact('data_bm'));
-            return $pdf->download('admin.master.report-br.table-pdf');
+            $pdf = PDF::loadView('admin.master.report-br.table-pdf', compact('data_bm'));
+            return $pdf->download('Barang_Return.pdf');
                     
         }
                         

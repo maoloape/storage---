@@ -39,8 +39,8 @@ class ReportBKController extends Controller
         if ($request->export_type == 'PDF') 
         {
                                                                 
-            $pdf = PDF::loadView('admin.master.report-bk.list', compact('data_bm'));
-            return $pdf->download('admin.master.report-bk.table-pdf');
+            $pdf = PDF::loadView('admin.master.report-bk.table-pdf', compact('data_bm'));
+            return $pdf->download('Barang_Keluar.pdf');
                                     
         }
                                         

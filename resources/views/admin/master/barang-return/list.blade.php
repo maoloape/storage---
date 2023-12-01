@@ -52,7 +52,7 @@
                                         <td>{{ $row->text }}</td>
                                         <td>
                                             <a href="#modalEdit{{ $row->id }}" data-toggle="modal" class="btn btn-xs btn-primary"><i class="fa fa-edit"></i> Edit</a>
-                                            <a href="#modalHapus{{ $row->id }}" data-toggle="modal" class="btn btn-xs btn-success"><i class="fa fa-trash"></i> Masuk</a>
+                                            <a href="#modalHapus{{ $row->id }}" data-toggle="modal" class="btn btn-xs btn-success"><i class="fa fa-arrow-right "></i> Masuk</a>
                                         </td> 
                                     </tr>
                                     @endforeach
@@ -64,60 +64,6 @@
             </div>
         </div>
     </div>
-
-    
-    {{-- <div class="modal fade" id="modalCreate" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Input Barang</h5>
-                    <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
-                    </button>
-                </div>
-                <form method="POST" action="/br/store">
-                @csrf
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="">Nama Barang</label>
-                        <select class="form-control" name="id_barang" id="" required>
-                            <option value="" hidden>-- Pilih Barang --</option>
-                            @foreach ($data_bm as $a)
-                            <option value="{{ $a->id }}">{{ $a->nama_barang }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Type</label>
-                        <select class="form-control" name="type_barang" id="" required>
-                            <option value="" hidden>-- Pilih Type Barang --</option>
-                            @foreach ($data_bm as $a)
-                            <option value="{{ $a->id }}">{{ $a->type }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="">No. Seri</label>
-                        <label for="">Type</label>
-                        <select class="form-control" name="id_serial" id="" required>
-                            <option value="" hidden>-- Pilih No Seri Barang --</option>
-                            @foreach ($data_bm as $a)
-                            <option value="{{ $a->id }}">{{ $a->serial_no }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Keterangan</label>
-                        <input type="text" class="form-control" name="text" placeholde="Keterangan ..." required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i> Close</button>
-                        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save changes</button>
-                </div>
-                </form>
-            </div>
-        </div>
-    </div> --}}
    
     @foreach ($data_bm as $d)
     <div class="modal fade" id="modalEdit{{ $d->id }}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -175,7 +121,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-Success"><i class="fa fa-trash"></i> Masuk</button>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-arrow-right"></i> Masuk</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-undo"></i> Close</button>
                 </div>
                 </form>
