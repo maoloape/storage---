@@ -103,7 +103,7 @@
                 <ul class="metismenu" id="menu">
                     @if (Auth::user()->role == 'admin')
                     <li class="nav-label">Dashboard</li><li>
-                        <a href="/beranda" aria-expanded="false">
+                        <a href="/Beranda" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
                     </li>
@@ -112,7 +112,7 @@
                             <i class="icon-globe-alt menu-icon"></i><span class="nav-text">User</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="/crud">User Acount</a></li>
+                            <li><a href="/User-Account">User Acount</a></li>
                         </ul>
                     </li>
                     <li class="nav-label">Master Data</li>
@@ -121,9 +121,9 @@
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Barang</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="/bm">Barang Masuk</a></li>
-                            <li><a href="/bk">Barang Keluar</a></li>
-                            <li><a href="/br">Baraang Return</a></li>
+                            <li><a href="/Barang-Masuk">Barang Masuk</a></li>
+                            <li><a href="/Barang-Keluar">Barang Keluar</a></li>
+                            <li><a href="/Barang-Return">Baraang Return</a></li>
                         </ul>
                     </li>
                     <li>
@@ -131,15 +131,15 @@
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Report</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="/rbm">Report Barang Masuk</a></li>
-                            <li><a href="/rbk">Report Barang Keluar</a></li>
-                            <li><a href="/rbr">Report Barang Return</a></li>
+                            <li><a href="/Report-Baramg-Masuk">Report Barang Masuk</a></li>
+                            <li><a href="/Report-Barang-Keluar">Report Barang Keluar</a></li>
+                            <li><a href="/Report-Barang-Return">Report Barang Return</a></li>
                         </ul>
                     </li>
                     @endif
                     @if (Auth::user()->role == 'user')
                     <li class="nav-label">Dashboard</li><li>
-                        <a href="{{ route('beranda')}}" aria-expanded="false">
+                        <a href="/Beranda" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
                     </li>
@@ -149,9 +149,9 @@
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Barang</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="/bm">Barang Masuk</a></li>
-                            <li><a href="/bk">Barang Keluar</a></li>
-                            <li><a href="/br">Baraang Return</a></li>
+                            <li><a href="/Barang-Masuk">Barang Masuk</a></li>
+                            <li><a href="/Barang-Keluar">Barang Keluar</a></li>
+                            <li><a href="/Barang-Return">Barang Return</a></li>
                         </ul>
                     </li>
                     <li>
@@ -159,9 +159,9 @@
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Report</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="/rbm">Report Barang Masuk</a></li>
-                            <li><a href="/rbk">Report Barang Keluar</a></li>
-                            <li><a href="/rbr">Report Barang Return</a></li>
+                            <li><a href="/Report-Baramg-Masuk">Report Barang Masuk</a></li>
+                            <li><a href="/Report-Barang-Keluar">Report Barang Keluar</a></li>
+                            <li><a href="/Report-Barang-Return">Report Barang Return</a></li>
                         </ul>
                     </li>
                     @endif

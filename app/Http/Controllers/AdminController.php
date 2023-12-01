@@ -8,13 +8,13 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
     function index(){
-        return view('beranda');
+        return view('Beranda');
     }
 
     function admin(){
-        return view('beranda');
+        return view('Beranda');
     }
     function user(){
-        return view('beranda');
+        return view('Beranda');
     }
 }

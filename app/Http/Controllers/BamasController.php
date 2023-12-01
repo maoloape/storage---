@@ -32,7 +32,7 @@ class BamasController extends Controller
             'return_in'     => 'in',
         ]);
 
-        return redirect('/bm')->with('Success', 'Data Berhasil Disimpan');
+        return redirect('/Barang-Masuk')->with('Success', 'Data Berhasil Disimpan');
     }
 
     public function update(Request $request, $id)
@@ -47,7 +47,7 @@ class BamasController extends Controller
             'no_kontrak'    => $request->no_kontrak,
         ]);
 
-        return redirect('/bm')->with('Success', 'Data Berhasil Disimpan');
+        return redirect('/Barang-Masuk')->with('Success', 'Data Berhasil Disimpan');
         
     }
 
@@ -77,7 +77,7 @@ class BamasController extends Controller
     public function destroy($id)
     {
         Bamas::where('id', $id)->delete();
-        return redirect('/bm')->with('Success', 'Data Berhasil Dihapus');
+        return redirect('/Barang-Masuk')->with('Success', 'Data Berhasil Dihapus');
     }
 
     public function keluar($id)
@@ -85,7 +85,7 @@ class BamasController extends Controller
         Bamas::where('id', $id)->update([
             'good_in' => 'out'
         ]);
-        return redirect('/bm')->with('Success', 'Data Berhasil Dikeluarkan');
+        return redirect('/Barang-Masuk')->with('Success', 'Data Berhasil Dikeluarkan');
     }
 
     public function return(Request $request, $id)
@@ -94,7 +94,7 @@ class BamasController extends Controller
             'return_in' => 'out',
             'text'      => $request->text,
         ]);
-        return redirect('/bm')->with('Success', 'Data Berhasil Dikeluarkan');
+        return redirect('/Barang-Masuk')->with('Success', 'Data Berhasil Dikeluarkan');
     }
 
     

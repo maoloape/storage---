@@ -15,7 +15,7 @@
                                 </button>
                             </div>
                             <hr>
-                            <form method="GET" action="/bm/filter">
+                            <form method="GET" action="/Barang-Masuk/filter">
                                 @csrf
                                 <div class="row pb-3">
                                     <div class="col-md-3">
@@ -83,7 +83,7 @@
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                     </button>
                 </div>
-                <form method="POST" action="/bm/store">
+                <form method="POST" action="/Barang-Masuk/store">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
@@ -125,7 +125,7 @@
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                     </button>
                 </div>
-                <form method="POST" action="/bm/update/{{ $d->id }}">
+                <form method="POST" action="/Barang-Masuk/update/{{ $d->id }}">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
@@ -168,7 +168,7 @@
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                     </button>
                 </div>
-                <form method="GET" action="/bm/destroy/{{ $d->id }}">
+                <form method="GET" action="/Barang-Masuk/destroy/{{ $d->id }}">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
@@ -194,7 +194,7 @@
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                     </button>
                 </div>
-                <form method="POST" action="/bm/keluar/{{ $e->id }}">
+                <form method="POST" action="/Barang-Masuk/keluar/{{ $e->id }}">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
@@ -220,7 +220,7 @@
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                     </button>
                 </div>
-                <form method="POST" action="/bm/return/{{ $f->id }}">
+                <form method="POST" action="/Barang-Masuk/return/{{ $f->id }}">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">

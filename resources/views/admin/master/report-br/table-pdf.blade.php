@@ -37,7 +37,7 @@
                 <img src="././assets/images/user/pertamina.png" height="80" width="80" alt="">
             </th>
             <th style="text-align: center">
-                <h1>Surat Barang Masuk</h1>
+                <h1>Surat Barang Return</h1>
             </th>
             <th style="text-align: center">
                 <img src="././assets/images/user/pertamina.png" height="80" width="80" alt="">

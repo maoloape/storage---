@@ -31,7 +31,7 @@ class ReturnController extends Controller
             'text'        => $request->text,
         ]);
 
-        return redirect('/br')->with('Success', 'Data Berhasil Disimpan');
+        return redirect('/Barang-Return')->with('Success', 'Data Berhasil Disimpan');
     }
 
     public function update(Request $request, $id)
@@ -42,7 +42,7 @@ class ReturnController extends Controller
             'text'   => $request->text,
         ]);
 
-        return redirect('/br')->with('Success', 'Data Berhasil Disimpan');
+        return redirect('/Barang-Return')->with('Success', 'Data Berhasil Disimpan');
         
     }
 
@@ -51,7 +51,7 @@ class ReturnController extends Controller
         Bamas::where('id', $id)->update([
             'return_in' => 'in'
         ]);
-        return redirect('/br')->with('Success', 'Data Berhasil Dimasukan');
+        return redirect('/Barang-Return')->with('Success', 'Data Berhasil Dimasukan');
     }
 
     public function filter(Request $request){

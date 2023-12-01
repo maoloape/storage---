@@ -9,7 +9,7 @@
                         <div class="card-header">
                             <h4 class="card-title">Barang Keluar</h4>
                             <hr>
-                            <form method="GET" action="/bk/filter">
+                            <form method="GET" action="/Barang-Keluar/filter">
                                 @csrf
                                 <div class="row pb-3">
                                     <div class="col-md-3">
@@ -70,7 +70,7 @@
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                     </button>
                 </div>
-                <form method="GET" action="/bk/destroy/{{ $c->id }}">
+                <form method="GET" action="/Barang-Keluar/destroy/{{ $c->id }}">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">

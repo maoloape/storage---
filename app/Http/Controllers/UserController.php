@@ -28,9 +28,9 @@ class UserController extends Controller
 
         if(Auth::attempt($infologin)){
             if(Auth::user() -> role == 'admin'){
-                return redirect('admin/admin');
+                return redirect('/Beranda');
             }elseif(Auth::user() -> role == 'user'){
-                return redirect('admin/user');
+                return redirect('/Beranda');
             }
         }else{
             return redirect('')->withErrors('Username atau Password Salah')->withInput();

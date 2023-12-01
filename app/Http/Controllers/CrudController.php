@@ -47,7 +47,7 @@ class CrudController extends Controller
             'role' => $request->role,
         ]);
 
-        return redirect('/crud')->with('Success', 'Data Berhasil Disimpan');
+        return redirect('/User-Account')->with('Success', 'Data Berhasil Disimpan');
     }
 
     public function update(Request $request, $id)
@@ -66,7 +66,7 @@ class CrudController extends Controller
             'role' => $request->role,
         ]);
 
-        return redirect('/crud')->with('Success', 'Data Berhasil Disimpan');
+        return redirect('/User-Account')->with('Success', 'Data Berhasil Disimpan');
         
     }
 
@@ -93,6 +93,6 @@ class CrudController extends Controller
     public function destroy($id)
     {
         user::where('id', $id)->delete();
-        return redirect('/crud')->with('Success', 'Data Berhasil Dihapus');
+        return redirect('/User-Account')->with('Success', 'Data Berhasil Dihapus');
     }
 }

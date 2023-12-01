@@ -58,7 +58,7 @@
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                     </button>
                 </div>
-                <form method="POST" action="/crud/store">
+                <form method="POST" action="/User-Account/store">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
@@ -100,7 +100,7 @@
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                     </button>
                 </div>
-                <form method="POST" action="/crud/update/{{ $d->id }}">
+                <form method="POST" action="/User-Account/update/{{ $d->id }}">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
@@ -142,7 +142,7 @@
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                     </button>
                 </div>
-                <form method="GET" action="/crud/destroy/{{ $d->id }}">
+                <form method="GET" action="/User-Account/destroy/{{ $d->id }}">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">

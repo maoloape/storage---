@@ -29,12 +29,12 @@ Route::middleware(['guest'])->group(function(){
 });
 
 Route::get('/home',function(){
-    return redirect('/admin');
+    return redirect('/Beranda');
 });
 
-Route::get('/beranda',function(){
-    return view('beranda');
-})->name('beranda');
+Route::get('/Beranda',function(){
+    return view('Beranda');
+})->name('Beranda');
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/admin',[AdminController::class,'index']);
@@ -46,49 +46,47 @@ Route::middleware(['auth'])->group(function(){
 Route::middleware(['auth'])->group(function(){
 
     //Beranda
-    Route::get('/beranda',[BerandaController::class,'index']);
+    Route::get('/Beranda',[BerandaController::class,'index']);
     
     // Crud User
-    Route::get('/crud',[CrudController::class,'index']);
-    Route::post('/crud/store',[CrudController::class,'store']);
-    Route::post('/crud/update/{id}',[CrudController::class,'update']);
-    Route::get('/crud/destroy/{id}',[CrudController::class,'destroy']);
+    Route::get('/User-Account',[CrudController::class,'index']);
+    Route::post('/User-Account/store',[CrudController::class,'store']);
+    Route::post('/User-Account/update/{id}',[CrudController::class,'update']);
+    Route::get('/User-Account/destroy/{id}',[CrudController::class,'destroy']);
 
     // Crud Barang Masuk
-    Route::get('/bm',[BamasController::class,'index']);
-    Route::post('/bm/store',[BamasController::class,'store']);
-    Route::get('/bm/filter',[BamasController::class,'filter']);
-    Route::post('/bm/update/{id}',[BamasController::class,'update']);
-    Route::get('/bm/destroy/{id}',[BamasController::class,'destroy']);
-    Route::post('/bm/keluar/{id}',[BamasController::class,'keluar']);
-    Route::post('/bm/return/{id}',[BamasController::class,'return']);
+    Route::get('/Barang-Masuk',[BamasController::class,'index']);
+    Route::post('/Barang-Masuk/store',[BamasController::class,'store']);
+    Route::get('/Barang-Masuk/filter',[BamasController::class,'filter']);
+    Route::post('/Barang-Masuk/update/{id}',[BamasController::class,'update']);
+    Route::get('/Barang-Masuk/destroy/{id}',[BamasController::class,'destroy']);
+    Route::post('/Barang-Masuk/keluar/{id}',[BamasController::class,'keluar']);
+    Route::post('/Barang-Masuk/return/{id}',[BamasController::class,'return']);
 
     // Crud Barang Keluar
-    Route::get('/bk',[BakerController::class,'index']);
-    Route::post('/bk/store',[BakerController::class,'store']);
-    Route::get('/bk/filter',[BakerController::class,'filter']);
-    Route::get('/bk/destroy/{id}',[BakerController::class,'destroy']);
+    Route::get('/Barang-Keluar',[BakerController::class,'index']);
+    Route::get('/Barang-Keluar/filter',[BakerController::class,'filter']);
+    Route::get('/Barang-Keluar/destroy/{id}',[BakerController::class,'destroy']);
 
     // Crud Barang Return
-    Route::get('/br',[ReturnController::class,'index']);
-    Route::post('/br/store',[ReturnController::class,'store']);
-    Route::get('/br/filter',[ReturnController::class,'filter']);
-    Route::post('/br/update/{id}',[ReturnController::class,'update']);
-    Route::get('/br/destroy/{id}',[ReturnController::class,'destroy']);
+    Route::get('/Barang-Return',[ReturnController::class,'index']);
+    Route::get('/Barang-Return/filter',[ReturnController::class,'filter']);
+    Route::post('/Barang-Return/update/{id}',[ReturnController::class,'update']);
+    Route::get('/Barang-Return/destroy/{id}',[ReturnController::class,'destroy']);
 
     // Setting Profile
     Route::get('/profile',[CrudController::class,'profile']);
     Route::post('/profile/updateprofile/{id}',[CrudController::class,'updateprofile']);
 
     // Export Report Barang Masuk
-    Route::get('/rbm',[ReportBMController::class,'index']);
-    Route::post('/rbm/bmexport',[ReportBMController::class,'bmexport']);
+    Route::get('/Report-Baramg-Masuk',[ReportBMController::class,'index']);
+    Route::post('/Report-Baramg-Masuk/bmexport',[ReportBMController::class,'bmexport']);
 
     // Export Report Barang Keluar
-    Route::get('/rbk',[ReportBKController::class,'index']);
-    Route::post('/rbk/bkexport',[ReportBKController::class,'bkexport']);
+    Route::get('/Report-Barang-Keluar',[ReportBKController::class,'index']);
+    Route::post('/Report-Barang-Keluar/bkexport',[ReportBKController::class,'bkexport']);
 
     // Export Report Barang Return
-    Route::get('/rbr',[ReportBRController::class,'index']);
-    Route::post('/rbr/brexport',[ReportBRController::class,'brexport']);
+    Route::get('/Report-Barang-Return',[ReportBRController::class,'index']);
+    Route::post('/Report-Barang-Return/brexport',[ReportBRController::class,'brexport']);
 });

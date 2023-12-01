@@ -9,7 +9,7 @@
                         <div class="card-header">
                             <h4 class="card-title">Barang Return</h4>
                             <hr>
-                            <form method="GET" action="/br/filter">
+                            <form method="GET" action="/Barang-Return/filter">
                                 @csrf
                                 <div class="row pb-3">
                                     <div class="col-md-3">
@@ -74,7 +74,7 @@
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                     </button>
                 </div>
-                <form method="POST" action="/br/update/{{ $d->id }}">
+                <form method="POST" action="/Barang-Return/update/{{ $d->id }}">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
@@ -113,7 +113,7 @@
                     <button type="button" class="close" data-dismiss="modal"><span>&times;</span>
                     </button>
                 </div>
-                <form method="GET" action="/br/destroy/{{ $c->id }}">
+                <form method="GET" action="/Barang-Return/destroy/{{ $c->id }}">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">

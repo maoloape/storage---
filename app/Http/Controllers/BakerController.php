@@ -33,7 +33,7 @@ class BakerController extends Controller
             'id_serial'   => $request->id_serial,
         ]);
 
-        return redirect('/bk')->with('Success', 'Data Berhasil Disimpan');
+        return redirect('/Barang-Keluar')->with('Success', 'Data Berhasil Disimpan');
     }
 
 
@@ -42,7 +42,7 @@ class BakerController extends Controller
         Bamas::where('id', $id)->update([
             'good_in' => 'in'
         ]);
-        return redirect('/bk')->with('Success', 'Data Berhasil Dimasukan');
+        return redirect('/Barang-Keluar')->with('Success', 'Data Berhasil Dimasukan');
     }
 
     public function filter(Request $request){

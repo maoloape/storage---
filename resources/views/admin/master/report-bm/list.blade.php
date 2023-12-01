@@ -18,7 +18,7 @@
                                     </div>
                                 @endif
                             <hr>
-                            <form action="/rbm/bmexport" method="post" >
+                            <form action="/Report-Baramg-Masuk/bmexport" method="post" >
                                 @csrf
                                 <div class="row pb-3">
                                     <div class="col-md-3">
