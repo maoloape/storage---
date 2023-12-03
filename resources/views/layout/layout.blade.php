@@ -131,7 +131,7 @@
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Report</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="/Report-Baramg-Masuk">Report Barang Masuk</a></li>
+                            <li><a href="/Report-Barang-Masuk">Report Barang Masuk</a></li>
                             <li><a href="/Report-Barang-Keluar">Report Barang Keluar</a></li>
                             <li><a href="/Report-Barang-Return">Report Barang Return</a></li>
                         </ul>
@@ -159,7 +159,7 @@
                             <i class="icon-screen-tablet menu-icon"></i><span class="nav-text">Report</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="/Report-Baramg-Masuk">Report Barang Masuk</a></li>
+                            <li><a href="/Report-Barang-Masuk">Report Barang Masuk</a></li>
                             <li><a href="/Report-Barang-Keluar">Report Barang Keluar</a></li>
                             <li><a href="/Report-Barang-Return">Report Barang Return</a></li>
                         </ul>

@@ -34,13 +34,13 @@
     <thead>
         <tr>
             <th style="text-align: center">
-                <img src="././assets/images/user/pertamina.png" height="80" width="80" alt="">
+                <img src="././assets/images/user/sigma.png" height="80" width="80" alt="">
             </th>
             <th style="text-align: center">
                 <h1>Surat Barang Return</h1>
             </th>
             <th style="text-align: center">
-                <img src="././assets/images/user/pertamina.png" height="80" width="80" alt="">
+                {{ now()->format('Y-m-d') }}
             </th>
         </tr>
     </thead>
@@ -51,7 +51,7 @@
     <thead>
         <tr>
             <th style="text-align: center">
-                <h3>PT. PERTAMINA HULU ENERGI <br> Lokasi : Lima F/S dan Echo E/S <br> RADIO PROJECT 2023 </h3>
+                <h3>PT. SIGMA CIPTA UTAMA <br> Taman Tekno Blok B5-7, BSD Tanggerang Selatan <br> {{ $project }} </h3>
             </th>
         </tr>
     </thead>

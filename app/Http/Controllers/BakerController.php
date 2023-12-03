@@ -23,20 +23,6 @@ class BakerController extends Controller
         return view('admin.master.barang-keluar.list',$data);
     }
 
-    public function store(Request $request)
-    {
-        Bamas::where(
-            'serial_no', $request->id_serial
-        )->update([
-            'id_barang'   => $request->id_barang,
-            'type_barang' => $request->type_barang,
-            'id_serial'   => $request->id_serial,
-        ]);
-
-        return redirect('/Barang-Keluar')->with('Success', 'Data Berhasil Disimpan');
-    }
-
-
     public function destroy($id)
     {
         Bamas::where('id', $id)->update([

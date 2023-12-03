@@ -19,11 +19,21 @@ class ReportBMController extends Controller
         return view('admin.master.report-bm.list', compact('data_bm'));
     }
 
-    public function bmexport(Request $request)
+    public function return(Request $request, $id)
     {
+        Bamas::where('id', $id)->update([
+            'project'      => $request->project,
+        ]);
+        return redirect('/Report-Barang-Masuk');
+    }
+
+    public function bmexport(Request $request)
+    {   
+        
         $start_date = $request -> input('start_date');
         $end_date   = $request -> input('end_date');
-
+        $project    = $request -> input('project');
+        
         $request->validate([
             'start_date' => 'required',
             'end_date' => 'required',
@@ -41,14 +51,13 @@ class ReportBMController extends Controller
 
         if ($request->export_type == 'PDF') 
         {
-                                
-        $pdf = PDF::loadView('admin.master.report-bm.table-pdf', compact('data_bm'));
+        $pdf = PDF::loadView('admin.master.report-bm.table-pdf', compact('data_bm', 'project'));
         return $pdf->download('Barang_Masuk.pdf');
 
         }
         
         else if ($request->export_type == 'EXCEL') {
-            return Excel::download(new BmExport($data_bm), 'Barang_Masuk.xlsx');
+            return Excel::download(new BmExport($data_bm, $project), 'Barang_Masuk.xlsx');
         }
     }
         

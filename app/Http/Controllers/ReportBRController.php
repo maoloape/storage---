@@ -20,7 +20,8 @@ class ReportBRController extends Controller
 
     public function brexport(Request $request){
         $start_date = $request->input('start_date');
-        $end_date = $request->input('end_date');
+        $end_date   = $request->input('end_date');
+        $project    = $request -> input('project');
 
         $request->validate([
             'start_date' => 'required',
@@ -39,13 +40,13 @@ class ReportBRController extends Controller
         if ($request->export_type == 'PDF') 
         {
                                                 
-            $pdf = PDF::loadView('admin.master.report-br.table-pdf', compact('data_bm'));
+            $pdf = PDF::loadView('admin.master.report-br.table-pdf', compact('data_bm','project'));
             return $pdf->download('Barang_Return.pdf');
                     
         }
                         
             else if ($request->export_type == 'EXCEL') {
-            return Excel::download(new BrExport($data_bm), 'Barang_Return.xlsx');
+            return Excel::download(new BrExport($data_bm, $project), 'Barang_Return.xlsx');
         }
     }
 }

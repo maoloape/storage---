@@ -20,20 +20,6 @@ class ReturnController extends Controller
         return view('admin.master.barang-return.list',$data);
     }
 
-    public function store(Request $request)
-    {
-        Bamas::where(
-            'serial_no', $request->id_serial
-        )->update([
-            'id_barang'   => $request->id_barang,
-            'type_barang' => $request->type_barang,
-            'id_serial'   => $request->id_serial,
-            'text'        => $request->text,
-        ]);
-
-        return redirect('/Barang-Return')->with('Success', 'Data Berhasil Disimpan');
-    }
-
     public function update(Request $request, $id)
     {
         Bamas::where('id', $id)

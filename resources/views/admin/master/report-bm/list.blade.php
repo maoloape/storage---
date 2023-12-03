@@ -18,7 +18,7 @@
                                     </div>
                                 @endif
                             <hr>
-                            <form action="/Report-Baramg-Masuk/bmexport" method="post" >
+                            <form action="/Report-Barang-Masuk/bmexport" method="post" >
                                 @csrf
                                 <div class="row pb-3">
                                     <div class="col-md-3">
@@ -29,9 +29,13 @@
                                         <label for="end_date">End Date :</label>
                                         <input type="date" name="end_date" class="form-control" required>
                                     </div>
+                                    <div class="col-md-3">
+                                        <label for="">Judul/Project</label>
+                                        <input type="text" class="form-control" name="project" placeholde="Project ..." required>
+                                    </div>
                                     <div class="col-md-1 pt-4">
                                         <button type="submit" class="btn btn-success" name="export_type" value="EXCEL"> Export Excel </button>
-                                    </div>
+                                    </div>               
                                     <div class="col-md-1 pt-4">
                                         <button type="submit" class="btn btn-danger" name="export_type" value="PDF"> Export PDF</button>
                                     </div>
@@ -56,7 +60,7 @@
                                     @endphp
                                     @foreach ($data_bm as $row)
                                     <tr>
-                                        <td>{{ $no++ }} </td>
+                                        <td>{{ $no++ }}</td>
                                         <td>{{ $row->nama_barang }}</td>
                                         <td>{{ $row->type }}</td>
                                         <td>{{ $row->serial_no }}</td>
@@ -72,5 +76,4 @@
             </div>
         </div>
     </div>
-
 @endsection

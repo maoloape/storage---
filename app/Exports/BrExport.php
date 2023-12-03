@@ -8,14 +8,16 @@ use Maatwebsite\Excel\Concerns\FromView;
 class BrExport implements FromView
 {
     protected $data_bm;
+    protected $project;
 
-    public function __construct($data_bm)
+    public function __construct($data_bm , $project)
     {
         $this->data_bm = $data_bm;
+        $this->project = $project;
     }
 
     public function view(): View
     {
-        return view('admin.master.report-br.table',['data_bm' =>$this->data_bm]);
+        return view('admin.master.report-br.table',['data_bm' =>$this->data_bm, 'project' => $this->project]);
     }
 }

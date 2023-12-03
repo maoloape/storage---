@@ -29,6 +29,10 @@
                                         <label for="">End Date :</label>
                                         <input type="date" name="end_date" class="form-control" required>
                                     </div>
+                                    <div class="col-md-3">
+                                        <label for="">Judul/Project</label>
+                                        <input type="text" class="form-control" name="project" placeholde="Project ..." required>
+                                    </div>
                                     <div class="col-md-1 pt-4">
                                         <button type="submit" class="btn btn-success" name="export_type" value="EXCEL"> Export Excel </button>
                                     </div>

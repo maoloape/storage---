@@ -79,8 +79,9 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/profile/updateprofile/{id}',[CrudController::class,'updateprofile']);
 
     // Export Report Barang Masuk
-    Route::get('/Report-Baramg-Masuk',[ReportBMController::class,'index']);
-    Route::post('/Report-Baramg-Masuk/bmexport',[ReportBMController::class,'bmexport']);
+    Route::get('/Report-Barang-Masuk',[ReportBMController::class,'index']);
+    Route::get('/Report-Barang-Masuk/bmexport/{id}',[ReportBMController::class,'bmexport']);
+    Route::post('/Report-Barang-Masuk/bmexport',[ReportBMController::class,'bmexport']);
 
     // Export Report Barang Keluar
     Route::get('/Report-Barang-Keluar',[ReportBKController::class,'index']);
