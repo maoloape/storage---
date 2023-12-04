@@ -19,6 +19,6 @@ class BerandaController extends Controller
         $data_bk = Bamas::where('good_in', 'out')
                         ->get();
 
-        return view('beranda',compact('data_bm', 'data_bk', 'data_br'));
+        return view('Beranda',compact('data_bm', 'data_bk', 'data_br'));
     }
 }

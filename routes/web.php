@@ -37,9 +37,9 @@ Route::get('/Beranda',function(){
 })->name('Beranda');
 
 Route::middleware(['auth'])->group(function(){
-    Route::get('/admin',[AdminController::class,'index']);
-    Route::get('/admin/admin',[AdminController::class,'admin'])->middleware('userAkses:admin');
-    Route::get('/admin/user',[AdminController::class,'user'])->middleware('userAkses:user');
+    Route::get('/Beranda',[AdminController::class,'index']);
+    Route::get('/Beranda/admin',[AdminController::class,'admin'])->middleware('userAkses:admin');
+    Route::get('/Beranda/user',[AdminController::class,'user'])->middleware('userAkses:user');
     Route::get('/logout',[UserController::class,'logout']);
 });
 
