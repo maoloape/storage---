@@ -44,7 +44,7 @@
         ***********************************-->
         <div class="nav-header">
             <div class="brand-logo">
-                <a href="#">
+                <a href="/Beranda">
                     <b class="logo-abbr"><img src="images/logo.png" alt=""> </b>
                     <span class="logo-compact"><img src="#" alt=""></span>
                     <span class="brand-title">
